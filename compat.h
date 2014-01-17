@@ -10,7 +10,7 @@
 
 #include "miner.h"  // for timersub
 #include "util.h"
-
+#include <winsock2.h>
 #include <windows.h>
 
 #ifndef HAVE_LIBWINPTHREAD
