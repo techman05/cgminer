@@ -4,8 +4,6 @@
 #                                                                                    #
 ######################################################################################
 
-(See bottom of file for steps to cross-build for Win32 from Linux.)
-
 **************************************************************************************
 * Introduction                                                                       *
 **************************************************************************************
@@ -41,15 +39,24 @@ Click the link that says "Download and run the latest mingw-get-inst version."
 Download and run the latest file. Install MinGW in the default directory.
 (I downloaded the one labeled "mingw-get-inst-20120426" - note that this could
 be a different version later.)
-Make sure to check the option for "Download latest repository catalogs".
-I just selected all the check boxes (excluding "Fortran Compiler") so that everything
-was installed.
+Make sure to check the option for "Download latest repository catalogs" (I think this is done automaticly in newest version and can be done after install).
+
+I just selected all the check boxes (excluding "Fortran Compiler") so that everything [in the basic setup area]
+was installed. **"mingw-developer-toolkit" should install all you need
 
 **************************************************************************************
 * Run the MSYS shell for the first time to create your user directory                *
 **************************************************************************************
 (Start Icon/keyboard key ==> All Programs ==> MinGW ==> MinGW Shell).
-This will create your user directory for you.
+(This shortcut won't be there by default and you need to make it yourself from bat file in mysys folder[C:\MinGW\msys\1.0])
+***Make sure if you didn't put MinGW in the default spot that the fstab file [in ect] points to it
+This will create your user directory for you. 
+
+**************************************************************************************
+*Make sure you have the right pThreads version                                       *
+**************************************************************************************
+You might need to install a diferent version of it to compile I needed 
+ mingw-get install mingw32-pthreads-w32-dev 
 
 **************************************************************************************
 * Install libpdcurses                                                                *
