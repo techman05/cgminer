@@ -42,7 +42,8 @@
 #include "config.h"
 
 #ifdef WIN32
-#include <windows.h>
+#include <winsock2.h>
+/*#include <windows.h>*/
 #endif
 
 #include "compat.h"
