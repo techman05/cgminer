@@ -67,7 +67,6 @@ void *alloca (size_t);
 
 #ifdef __MINGW32__
 #include <winsock2.h>
-#include <windows.h>
 #include <io.h>
 static inline int fsync (int fd)
 {
