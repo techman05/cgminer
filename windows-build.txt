@@ -4,6 +4,8 @@
 #                                                                                    #
 ######################################################################################
 
+(See bottom of file for steps to cross-build for Win32 from Linux.)
+
 **************************************************************************************
 * Introduction                                                                       *
 **************************************************************************************
@@ -345,6 +347,16 @@ CPPFLAGS="-I`pwd`/../../cgminer-win32-deps/include" LDFLAGS="-L`pwd`/../../cgmin
 
 And make:
 
+make
+
+MXE stuff
+
+git clone https://github.com/ckolivas/cgminer.git
+cd cgminer
+autoreconf -fi
+./configure --host=i686-pc-mingw32.static --enable-avalon --disable-libcurl --without-curses [to make sure everythings working]
+or
+./configure --host=i686-pc-mingw32.static --enable-avalon CFLAGS=-DCURL_STATICLIB
 make
 
 After cgminer builds, the next steps are the same as for native
