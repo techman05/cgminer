@@ -349,14 +349,24 @@ And make:
 
 make
 
-MXE stuff
+MXE stuff 
+  *Note from github.com/techman05 : I put my file in the mxe lib, bin, include areas but I'm sure you can do like mingm 
+       and using a seperate directory for cross compile.
+       
+1. Follow the mxe tutorial to install here http://mxe.cc/#tutorial
+2. collect the files needed like with mingw compiler (if you find the command to use
+    an external package like minGW add it here or add to the areas made in mxe)
 
 git clone https://github.com/ckolivas/cgminer.git
 cd cgminer
 autoreconf -fi
-./configure --host=i686-pc-mingw32.static --enable-avalon --disable-libcurl --without-curses [to make sure everythings working]
-or
-./configure --host=i686-pc-mingw32.static --enable-avalon CFLAGS=-DCURL_STATICLIB
+./configure --host=i686-pc-mingw32.static --enable-avalon --disable-libcurl --without-curses    (*-> [to make sure 
+                                                                                                 everythings working])                          
+"OR"
+
+./configure --host=i686-pc-mingw32.static --enable-avalon CFLAGS=-DCURL_STATICLIB 
+    (this above command is to try and make libcurl be seen since make won't find it 
+              if you enable libcurl and don't specify this)
 make
 
 After cgminer builds, the next steps are the same as for native
